@@ -99,7 +99,7 @@ public function register(Request $request)
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'profile_id' => $profile->id,
-            'role_id' => 1,//pasien
+            'role_id' => 4,//pasien
             'is_active' => true
         ]);
 
@@ -251,7 +251,7 @@ public function updateRegister(Request $request)
             } else {
                 // Insert metadata baru
                 DB::table('global_uploads')->insert([
-                    'transaction_code' => 'UPDATE_PROFILE_PHOTO',
+                    'transaction_code' => 'REGISTER_PHOTO',
                     'file_name' => $originalFileName,
                     'file_path' => 'storage/' . $filePath,
                     'file_type' => $fileType,

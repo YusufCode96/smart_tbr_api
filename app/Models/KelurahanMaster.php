@@ -8,11 +8,15 @@ class KelurahanMaster extends Model
 {
     protected $table = 'kelurahan_master';
     protected $primaryKey = 'id';
-    public $timestamps = true;
-    protected $fillable = ['kecamatan_id', 'nama', 'is_active'];
+    public $incrementing = false;
+    protected $keyType = 'string';
+    public $timestamps = false;
+
+    protected $fillable = ['id', 'kecamatan_id', 'name'];
+
     public function kecamatan()
     {
-        return $this->belongsTo(KecamatanMaster::class, 'kecamatan_id');
+        return $this->belongsTo(KecamatanMaster::class, 'kecamatan_id', 'id');
     }
     public function profiles()
     {

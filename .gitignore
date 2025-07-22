@@ -1,0 +1,20 @@
+# Direktori/vendor composer (jangan commit dependency)
+vendor/
+
+# File konfigurasi environment (berisi password/secret)
+
+#.env
+
+# Cache & log
+storage/logs/
+storage/framework/cache/
+storage/framework/sessions/
+storage/framework/views/
+
+# Direktori cache composer dan PHPStorm/VSCode
+composer.lock
+.idea/
+.vscode/
+
+# File sistem/macOS
+.DS_Store
